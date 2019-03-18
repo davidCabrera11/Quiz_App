@@ -12,10 +12,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //
+        //Get edit text id
         EditText yourName = (EditText) findViewById(R.id.yourName);
         EditText friendName = (EditText) findViewById(R.id.friendName);
 
+        //change the hint text color to gray
         yourName.setHintTextColor(Color.GRAY);
         friendName.setHintTextColor(Color.GRAY);
 

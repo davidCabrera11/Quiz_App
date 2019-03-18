@@ -11,21 +11,27 @@
     <EditText
         android:id="@+id/yourName"
         android:layout_width="220dp"
-        android:layout_height="wrap_content"
+        android:layout_height="65dp"
         android:layout_above="@+id/friendName"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
-        android:hint="@string/fname" />
+        android:background="@drawable/textstyle"
+        android:hint="@string/fname"
+        android:textAlignment="center"
+        android:textColor="@color/textInputColor"/>
 
 
     <EditText
         android:id="@+id/friendName"
         android:layout_width="220dp"
-        android:layout_height="wrap_content"
+        android:layout_height="65dp"
         android:layout_above="@id/startButton"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
-        android:hint="@string/yname" />
+        android:background="@drawable/textstyle"
+        android:hint="@string/yname"
+        android:textAlignment="center"
+        android:textColor="@color/textInputColor"/>
 
     <Button
         android:id="@+id/startButton"
@@ -34,6 +40,7 @@
         android:layout_centerInParent="true"
         android:layout_marginTop="10dp"
         android:background="@drawable/buttonstyle"
-        android:text="@string/startquiz" />
+        android:text="@string/startquiz"
+        android:textSize="20sp" />
 
 </RelativeLayout>

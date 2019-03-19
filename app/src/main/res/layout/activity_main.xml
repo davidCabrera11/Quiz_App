@@ -17,7 +17,7 @@
         android:layout_above="@id/yourName"
         android:layout_marginBottom="25dp"
         android:layout_centerHorizontal="true"
-        app:srcCompat="@android:drawable/editbox_background_normal" />
+        app:srcCompat="@drawable/bffquiztransparent2"/>
 
 
     <EditText

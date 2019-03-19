@@ -18,7 +18,7 @@ public class Questions_Activity extends AppCompatActivity {
         textView = findViewById(R.id.textView);
         bffDatabase = new DatabaseHelper(this);
 
-        bffDatabase.showName(textView);
+        bffDatabase.showFriendName(textView);
 
 
 

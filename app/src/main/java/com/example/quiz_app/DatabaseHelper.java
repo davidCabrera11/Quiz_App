@@ -40,8 +40,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE IF NOT EXISTS Choice(choiceId INTEGER PRIMARY KEY AUTOINCREMENT, choicePoints int, " +
                 "questionId int, FOREIGN KEY(questionId) REFERENCES Question(questionId))");
 
-        db.execSQL("CREATE TABLE IF NOT EXISTS Name(yourName VARCHAR, friendName VARCHAR)");
-
+        db.execSQL("CREATE TABLE IF NOT EXISTS Name(nameId INTEGER PRIMARY KEY AUTOINCREMENT," +
+                     "yourName VARCHAR, friendName VARCHAR)");
 
     }
 
@@ -62,19 +62,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public void update_name(String oldFriendName, String newFriendName){
-        this.getWritableDatabase().execSQL("UPDATE Name SET friendName='"+newFriendName+"'" +
-                                            "WHERE friendName='"+oldFriendName+"'");
+    public void update_name(String stryourName, String strFriendName){
+        this.getWritableDatabase().execSQL("UPDATE Name SET yourName='"+stryourName+"'," +
+                                            "friendName='"+strFriendName+"'WHERE nameId=1");
 
     }
 
-    public void showName(TextView textView){
+    public void showFriendName(TextView textView){
 
         Cursor cursor = this.getReadableDatabase().rawQuery("SELECT * FROM Name",null);
         textView.setText("");
         while (cursor.moveToNext()){
 
-            textView.append(cursor.getString(1)+"\n");
+            textView.append(cursor.getString(1)+cursor.getString(2)+"\n");
+            break;
         }
 
     }

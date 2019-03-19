@@ -28,7 +28,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
         android:background="@drawable/textstyle"
-        android:hint="@string/fname"
+        android:hint="@string/yname"
         android:textAlignment="center"
         android:textColor="@color/textInputColor"/>
 
@@ -40,7 +40,7 @@
         android:layout_centerInParent="true"
         android:layout_marginBottom="20dp"
         android:background="@drawable/textstyle"
-        android:hint="@string/yname"
+        android:hint="@string/fname"
         android:textAlignment="center"
         android:textColor="@color/textInputColor"/>
 

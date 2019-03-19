@@ -1,12 +1,16 @@
 package com.example.quiz_app;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,10 +19,14 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextYourName;
     private EditText editTextFriendName;
 
+    DatabaseHelper bffDatabase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        bffDatabase = new DatabaseHelper(this);
 
         btnStartQuiz = findViewById(R.id.startQuizButton);
         editTextYourName = findViewById(R.id.yourName);
@@ -42,8 +50,11 @@ public class MainActivity extends AppCompatActivity {
 
                 }else{
 
-                    Intent intent = new Intent(MainActivity.this,Questions_Activity.class);
-                    startActivity(intent);
+
+                        bffDatabase.insertData(editTextYourName.getText().toString(),editTextFriendName.getText().toString());
+                        Toast.makeText(MainActivity.this,"Names Inserted",Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(MainActivity.this,Questions_Activity.class);
+                        startActivity(intent);
                 }
             }
         });
@@ -58,5 +69,8 @@ public class MainActivity extends AppCompatActivity {
         friendName.setHintTextColor(Color.GRAY);
 
     }
+
+
+
 
 }

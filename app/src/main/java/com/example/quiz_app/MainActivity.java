@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
                         bffDatabase.insertData(editTextYourName.getText().toString(),editTextFriendName.getText().toString());
                         bffDatabase.update_name(editTextYourName.getText().toString(),editTextFriendName.getText().toString());
-                        Toast.makeText(MainActivity.this,"Names Inserted",Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(MainActivity.this,"Names Inserted",Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(MainActivity.this,Questions_Activity.class);
                         startActivity(intent);
                 }

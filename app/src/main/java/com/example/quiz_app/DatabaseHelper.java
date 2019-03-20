@@ -74,7 +74,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         textView.setText("");
         while (cursor.moveToNext()){
 
-            textView.append(cursor.getString(1)+cursor.getString(2)+"\n");
+            //Shows yourname and friend name
+          //  textView.append(cursor.getString(1)+cursor.getString(2)+"\n");
+            //1 is first column meaning your name
+            // 2 is second column meaning friend name
+
+            textView.append(cursor.getString(2));
+
+
             break;
         }
 

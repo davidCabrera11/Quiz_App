@@ -15,10 +15,10 @@ public class Questions_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questions_);
 
-        textView = findViewById(R.id.textView);
-        bffDatabase = new DatabaseHelper(this);
+        //textView = findViewById(R.id.textView);
+        //bffDatabase = new DatabaseHelper(this);
 
-        bffDatabase.showFriendName(textView);
+        //bffDatabase.showFriendName(textView);
 
 
 

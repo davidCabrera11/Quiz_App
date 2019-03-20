@@ -11,13 +11,13 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_margin="20dp"
         android:gravity="center"
-        android:text="TextView"
+        android:text="How long have you known Carlos?"
         android:textAlignment="center"
         android:textColor="@color/textColor"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textSize="28sp"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/textChoice1"
@@ -27,8 +27,11 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="40dp"
         android:background="@drawable/questiontextstyle"
-        android:text="TextView"
-        android:textAlignment="center"/>
+        android:text="Always"
+        android:textSize="18sp"
+        android:textColor="@color/textInputColor"
+        android:textAlignment="center"
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/textChoice2"
@@ -36,8 +39,11 @@
         android:layout_height="70dp"
         android:layout_centerInParent="true"
         android:background="@drawable/questiontextstyle"
-        android:text="TextView"
-        android:textAlignment="center"/>
+        android:text="A year or so"
+        android:textSize="18sp"
+        android:textColor="@color/textInputColor"
+        android:textAlignment="center"
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/textChoice3"
@@ -47,8 +53,11 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:background="@drawable/questiontextstyle"
-        android:text="TextView"
-        android:textAlignment="center"/>
+        android:text="A few months or less"
+        android:textSize="18sp"
+        android:textColor="@color/textInputColor"
+        android:textAlignment="center"
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/textNumberQuestion"
@@ -56,7 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/textChoice3"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="45dp"
         android:text="1/10"
         android:textColor="@color/textColor"
         android:textSize="24sp"

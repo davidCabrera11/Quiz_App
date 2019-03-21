@@ -20,18 +20,6 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextFriendName;
     public String passFriendName;
 
-    //Insert questions to the SQLite database
-    // 5 is used as a place holder to then replace it with the friends name
-    public static final String strquestion1 = "How long have you known 5 ?";
-    public static final String strquestion2 = "How often do you see 5 ?";
-    public static final String strquestion3 = "Do you trust 5 ?";
-    public static final String strquestion4 = "How often do you fight with 5?";
-    public static final String strquestion5 = "How much do you have in common with 5?";
-    public static final String strquestion6 = "How much do you know about 5?";
-    public static final String strquestion7 = "Do you enjoy being with 5 ?";
-    public static final String strquestion8 = "Does 5 annoy you a lot ?";
-    public static final String strquestion9 = "Do you trust 5 with your secrets ?";
-    public static final String strquestion10 = "Do you talk with 6 every day ?";
 
     DatabaseHelper bffDatabase;
 
@@ -46,8 +34,7 @@ public class MainActivity extends AppCompatActivity {
         editTextYourName = findViewById(R.id.yourName);
         editTextFriendName = findViewById(R.id.friendName);
 
-        bffDatabase.insertQuestions(strquestion1,   strquestion2,   strquestion3,   strquestion4,   strquestion5,   strquestion6,
-                strquestion7,   strquestion8,   strquestion9);
+
 
         //Move to Questions_Activity.java when button is pressed
         btnStartQuiz.setOnClickListener(new View.OnClickListener() {
@@ -66,11 +53,9 @@ public class MainActivity extends AppCompatActivity {
 
                 }else{
 
-                        bffDatabase.insertData(editTextYourName.getText().toString(),editTextFriendName.getText().toString());
-                        bffDatabase.update_name(editTextYourName.getText().toString(),editTextFriendName.getText().toString());
 
                         //Toast.makeText(MainActivity.this,"Names Inserted",Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(MainActivity.this,Questions_Activity.class);
+                        Intent intent = new Intent(MainActivity.this,question2Activity.class);
                         passFriendName = editTextFriendName.getText().toString();
                         intent.putExtra("friend",passFriendName);
                         startActivity(intent);

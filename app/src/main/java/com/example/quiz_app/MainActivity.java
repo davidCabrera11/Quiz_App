@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String strquestion7 = "Do you enjoy being with 5 ?";
     public static final String strquestion8 = "Does 5 annoy you a lot ?";
     public static final String strquestion9 = "Do you trust 5 with your secrets ?";
-    public static final String strquestion10 = "Do you talk with 4 every day ?";
+    public static final String strquestion10 = "Do you talk with 6 every day ?";
 
     DatabaseHelper bffDatabase;
 
@@ -45,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         editTextYourName = findViewById(R.id.yourName);
         editTextFriendName = findViewById(R.id.friendName);
 
+        bffDatabase.insertQuestions(strquestion1,   strquestion2,   strquestion3,   strquestion4,   strquestion5,   strquestion6,
+                strquestion7,   strquestion8,   strquestion9);
 
         //Move to Questions_Activity.java when button is pressed
         btnStartQuiz.setOnClickListener(new View.OnClickListener() {
@@ -65,8 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
                         bffDatabase.insertData(editTextYourName.getText().toString(),editTextFriendName.getText().toString());
                         bffDatabase.update_name(editTextYourName.getText().toString(),editTextFriendName.getText().toString());
-                        bffDatabase.insertQuestions(strquestion1,   strquestion2,   strquestion3,   strquestion4,   strquestion5,   strquestion6,
-                            strquestion7,   strquestion8,   strquestion9,   strquestion10);
+
 
                     //Toast.makeText(MainActivity.this,"Names Inserted",Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(MainActivity.this,Questions_Activity.class);

@@ -50,7 +50,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public void insertQuestions(String strq1, String strq2, String strq3, String strq4, String strq5,String strq6, String strq7, String strq8, String strq9, String strq10){
+    public void insertQuestions(String strq1, String strq2, String strq3, String strq4, String strq5,String strq6, String strq7, String strq8, String strq9){
 
 
         ContentValues contentValues = new ContentValues();
@@ -63,7 +63,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put("question",strq7);
         contentValues.put("question",strq8);
         contentValues.put("question",strq9);
-        contentValues.put("question",strq10);
+        //contentValues.put("question",strq10);
         this.getWritableDatabase().insert("Question","",contentValues);
 
 
@@ -123,17 +123,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor cursor = this.getReadableDatabase().rawQuery("SELECT * FROM Question",null);
         textShowQuestion.setText("");
 
-        while (cursor.moveToNext()){
+            while (cursor.moveToNext()){
 
-            //Shows yourname and friend name
-            //  textView.append(cursor.getString(1)+cursor.getString(2)+"\n");
-            //1 is first column meaning your name
-            // 2 is second column meaning friend name
 
-            textShowQuestion.append(cursor.getString(1));
+                textShowQuestion.append(cursor.getString(1));
 
-            break;
-        }
+                break;
+            }
 
 
     }

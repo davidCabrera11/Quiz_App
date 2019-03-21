@@ -18,8 +18,9 @@ public class MainActivity extends AppCompatActivity {
     private Button btnStartQuiz;
     private EditText editTextYourName;
     private EditText editTextFriendName;
+    public String passFriendName;
 
-
+    //Insert questions to the SQLite database
     // 5 is used as a place holder to then replace it with the friends name
     public static final String strquestion1 = "How long have you known 5 ?";
     public static final String strquestion2 = "How often do you see 5 ?";
@@ -68,10 +69,12 @@ public class MainActivity extends AppCompatActivity {
                         bffDatabase.insertData(editTextYourName.getText().toString(),editTextFriendName.getText().toString());
                         bffDatabase.update_name(editTextYourName.getText().toString(),editTextFriendName.getText().toString());
 
-
-                    //Toast.makeText(MainActivity.this,"Names Inserted",Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(MainActivity.this,"Names Inserted",Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(MainActivity.this,Questions_Activity.class);
+                        passFriendName = editTextFriendName.getText().toString();
+                        intent.putExtra("friend",passFriendName);
                         startActivity(intent);
+                        finish();
                 }
             }
         });

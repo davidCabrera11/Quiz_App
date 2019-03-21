@@ -32,7 +32,7 @@
         android:textColor="@color/textInputColor"
         android:textAlignment="center"
         android:gravity="center"
-        android:onClick="questionIncrease"/>
+        android:onClick="questionTextChange"/>
 
     <TextView
         android:id="@+id/textChoice2"
@@ -45,7 +45,7 @@
         android:textColor="@color/textInputColor"
         android:textAlignment="center"
         android:gravity="center"
-        android:onClick="questionIncrease"/>
+        android:onClick="questionTextChange"/>
 
     <TextView
         android:id="@+id/textChoice3"
@@ -60,7 +60,7 @@
         android:textColor="@color/textInputColor"
         android:textAlignment="center"
         android:gravity="center"
-        android:onClick="questionIncrease"/>
+        android:onClick="questionTextChange"/>
 
     <TextView
         android:id="@+id/textNumberQuestion"

@@ -55,14 +55,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         ContentValues contentValues = new ContentValues();
         contentValues.put("question",strq1);
-        contentValues.put("question",strq2);
-        contentValues.put("question",strq3);
-        contentValues.put("question",strq4);
-        contentValues.put("question",strq5);
-        contentValues.put("question",strq6);
-        contentValues.put("question",strq7);
-        contentValues.put("question",strq8);
-        contentValues.put("question",strq9);
+        //contentValues.put("question",strq2);
+        //contentValues.put("question",strq3);
+        //contentValues.put("question",strq4);
+        //contentValues.put("question",strq5);
+        //contentValues.put("question",strq6);
+        //contentValues.put("question",strq7);
+        //contentValues.put("question",strq8);
+        //contentValues.put("question",strq9);
         //contentValues.put("question",strq10);
         this.getWritableDatabase().insert("Question","",contentValues);
 

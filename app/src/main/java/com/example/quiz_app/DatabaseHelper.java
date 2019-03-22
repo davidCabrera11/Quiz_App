@@ -25,6 +25,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE IF NOT EXISTS Name(nameId INTEGER PRIMARY KEY AUTOINCREMENT," +
                      "yourName VARCHAR, friendName VARCHAR)");
 
+        db.execSQL("CREATE TABLE IF NOT EXISTS Scores(score int)");
+
+
     }
 
 

@@ -1,6 +1,9 @@
 package com.example.quiz_app;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -41,6 +44,8 @@ public class question2Activity extends AppCompatActivity {
     private AdView adView;
     private InterstitialAd interstitialAd;
 
+    SharedPreferences sharedPreferences;
+
     Random r;
 
 
@@ -48,6 +53,11 @@ public class question2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question2);
+
+
+         sharedPreferences = getSharedPreferences("SaveScore", Context.MODE_PRIVATE);
+         final SharedPreferences.Editor editor = sharedPreferences.edit();
+
 
 
         //Admob
@@ -100,16 +110,17 @@ public class question2Activity extends AppCompatActivity {
 
                     if(iquestionNumber >=11){
 
-                        int scoreSecond;
-                        scoreSecond= iScore;
-
+                        editor.putInt("score",iScore);
+                        editor.apply();
 
                         numberOfQuestion.setText("10/10");
 
-                        if (interstitialAd.isLoaded()){
+                       if (interstitialAd.isLoaded()){
 
-                            interstitialAd.show();
-                        }else {
+                           interstitialAd.show();
+
+
+                       }else {
 
                             Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
                             intent.putExtra("Score",iScore);
@@ -126,6 +137,10 @@ public class question2Activity extends AppCompatActivity {
                     updateQuesiton(r.nextInt(iQuestionLength));
 
                     if(iquestionNumber >=11){
+
+                        editor.putInt("score",iScore);
+                        editor.apply();
+
 
                         numberOfQuestion.setText("10/10");
 
@@ -151,6 +166,10 @@ public class question2Activity extends AppCompatActivity {
                     updateQuesiton(r.nextInt(iQuestionLength));
 
                     if(iquestionNumber >=11){
+
+
+                        editor.putInt("score",iScore);
+                        editor.apply();
 
                         numberOfQuestion.setText("10/10");
 
@@ -184,6 +203,10 @@ public class question2Activity extends AppCompatActivity {
 
                     if(iquestionNumber >= 11){
 
+                        editor.putInt("score",iScore);
+                        editor.apply();
+
+
                         numberOfQuestion.setText("10/10");
 
                         if (interstitialAd.isLoaded()){
@@ -207,6 +230,10 @@ public class question2Activity extends AppCompatActivity {
 
                     if(iquestionNumber >=11){
 
+                        editor.putInt("score",iScore);
+                        editor.apply();
+
+
                         numberOfQuestion.setText("10/10");
 
                         if (interstitialAd.isLoaded()){
@@ -229,6 +256,10 @@ public class question2Activity extends AppCompatActivity {
                     updateQuesiton(r.nextInt(iQuestionLength));
 
                     if(iquestionNumber >=11){
+
+                        editor.putInt("score",iScore);
+                        editor.apply();
+
 
                         numberOfQuestion.setText("10/10");
 
@@ -264,6 +295,10 @@ public class question2Activity extends AppCompatActivity {
 
                     if(iquestionNumber >= 11){
 
+                        editor.putInt("score",iScore);
+                        editor.apply();
+
+
                         numberOfQuestion.setText("10/10");
 
                         if (interstitialAd.isLoaded()){
@@ -288,6 +323,10 @@ public class question2Activity extends AppCompatActivity {
 
                     if(iquestionNumber >=11){
 
+                        editor.putInt("score",iScore);
+                        editor.apply();
+
+
                         numberOfQuestion.setText("10/10");
 
                         if (interstitialAd.isLoaded()){
@@ -311,6 +350,10 @@ public class question2Activity extends AppCompatActivity {
                     updateQuesiton(r.nextInt(iQuestionLength));
 
                     if(iquestionNumber >=11){
+
+                        editor.putInt("score",iScore);
+                        editor.apply();
+
 
                         numberOfQuestion.setText("10/10");
 
@@ -359,7 +402,11 @@ public class question2Activity extends AppCompatActivity {
      }
 
 
+    private int saveScore(int iScore){
 
+
+        return iScore;
+    }
 
 
 

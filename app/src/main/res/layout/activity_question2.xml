@@ -31,7 +31,6 @@
         android:textSize="18sp"
         android:textColor="@color/textInputColor"
         android:textAlignment="center"
-
         android:gravity="center"/>
 
     <TextView

@@ -1,6 +1,9 @@
 package com.example.quiz_app;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +15,8 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 
+import java.util.Random;
+
 public class ResultsActivity extends AppCompatActivity {
 
 
@@ -19,22 +24,22 @@ public class ResultsActivity extends AppCompatActivity {
     private Button btnResartQuiz;
     private  int a = 0;
 
-    private AdView adView;
-    private InterstitialAd interstitialAd;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
 
-//        int result = getIntent().getExtras().getInt("Score");
+         SharedPreferences shResult = getSharedPreferences("SaveScore", Context.MODE_PRIVATE);
 
-   //     String strResult = Integer.toString(result);
 
-  //      showResult=findViewById(R.id.textShowResults);
+        int result = shResult.getInt("score",-1);
 
-  //      showResult.setText(strResult+"%");
+        String strResult = Integer.toString(result);
+
+        showResult=findViewById(R.id.textShowResults);
+
+        showResult.setText(strResult+"%");
 
 
 

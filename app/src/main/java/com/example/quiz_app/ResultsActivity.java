@@ -17,6 +17,7 @@ public class ResultsActivity extends AppCompatActivity {
 
     TextView showResult;
     private Button btnResartQuiz;
+    private  int a = 0;
 
     private AdView adView;
     private InterstitialAd interstitialAd;
@@ -41,10 +42,17 @@ public class ResultsActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
+                displayAds(btnResartQuiz);
 
-                Intent intent = new Intent(ResultsActivity.this,MainActivity.class);
-                startActivity(intent);
-                finish();
+                if (a==1){
+                    Intent intent = new Intent(ResultsActivity.this,MainActivity.class);
+                    startActivity(intent);
+                    finish();
+
+                }
+
+                a++;
+
             }
         });
 
@@ -58,7 +66,6 @@ public class ResultsActivity extends AppCompatActivity {
         showResult=findViewById(R.id.textShowResults);
 
         showResult.setText(strResult+"%");
-
 
 
 

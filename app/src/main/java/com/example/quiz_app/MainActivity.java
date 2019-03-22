@@ -55,8 +55,6 @@ public class MainActivity extends AppCompatActivity {
 
                         passFriendName = editTextFriendName.getText().toString();
 
-                        Intent qChoice = new Intent(MainActivity.this,questionsChoices.class);
-                        qChoice.putExtra("friendName",passFriendName);
                         Intent intent = new Intent(MainActivity.this,question2Activity.class);
                         intent.putExtra("friend",passFriendName);
                         startActivity(intent);

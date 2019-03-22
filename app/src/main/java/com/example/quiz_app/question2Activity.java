@@ -10,17 +10,32 @@ import java.util.Random;
 
 public class question2Activity extends AppCompatActivity {
 
+
+    public String[] strQuestions={
+            "How often do you see 5 ?" , // 0
+            "Do you trust 5 ?" , // 1
+            "How often do you fight with 5?", //2
+            "How much do you have in common with 5?", //3
+            "How much do you know about 5?", //4
+            "Do you enjoy being with 5 ?", //5
+            "Does 5 annoy you a lot ?", //6
+            "Do you trust 5 with your secrets ?", //7
+            "Do you talk with 5 every day ?", //8
+            "Does 5 help you ?"}; //9
+
+
     TextView question, choice1, choice2, choice3, numberOfQuestion;
 
     private questionsChoices mQuestions = new questionsChoices();
 
     private String strAnswer;
     private int iScore = 0, iquestionNumber = 0;
-    private int iQuestionLength = mQuestions.strQuestions.length;
+    private int iQuestionLength = strQuestions.length;
 
     Random r;
 
-    
+
+
 
 
 
@@ -36,7 +51,6 @@ public class question2Activity extends AppCompatActivity {
         choice2 = findViewById(R.id.textChoice2);
         choice3 = findViewById(R.id.textChoice3);
         numberOfQuestion = findViewById(R.id.textNumberQuestion);
-
         numberOfQuestion.setText("Score: "+ iScore);
 
 
@@ -114,11 +128,16 @@ public class question2Activity extends AppCompatActivity {
 
      private void  updateQuesiton(int inumber){
 
-        String strFriend = getIntent().getExtras().getString("friend");
+         String strFriend = getIntent().getExtras().getString("friend");
+
+        for (int index = 0; index<strQuestions.length;index++){
+
+            strQuestions[index] = strQuestions[index].replace("5",strFriend);
 
 
+        }
 
-        question.setText(mQuestions.strGetQuestion(inumber));
+        question.setText(strQuestions[inumber]);
         choice1.setText(mQuestions.getChoice1(inumber));
         choice2.setText(mQuestions.getChoice2(inumber));
         choice3.setText(mQuestions.getChoice3(inumber));

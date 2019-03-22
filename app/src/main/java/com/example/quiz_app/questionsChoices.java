@@ -2,21 +2,6 @@ package com.example.quiz_app;
 
 public class questionsChoices {
 
-
-
-    public String[] strQuestions={
-            "How often do you see 5 ?" , // 0
-            "Do you trust 5 ?" , // 1
-            "How often do you fight with 5?", //2
-            "How much do you have in common with 5?", //3
-            "How much do you know about 5?", //4
-            "Do you enjoy being with 5 ?", //5
-            "Does 5 annoy you a lot ?", //6
-            "Do you trust 5 with your secrets ?", //7
-            "Do you talk with 5 every day ?", //8
-            "Does 5 help you ?"}; //9
-
-
     public String strChoices[][]= {
             {"Always","Never","Sometimes"}, //0
             {"Yes with my life!","Not really","Sometimes"}, //1
@@ -37,11 +22,6 @@ public class questionsChoices {
                                             "Yes always there for me"};
 
 
-    public String strGetQuestion (int a){
-
-        String question = strQuestions[a];
-        return question;
-    }
 
     public String getChoice1(int a){
         String strChoice = strChoices[a][0];

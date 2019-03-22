@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
@@ -60,6 +61,19 @@ public class question2Activity extends AppCompatActivity {
         AdRequest adRequest1 = new AdRequest.Builder().build();
         interstitialAd.loadAd(adRequest1);
 
+        interstitialAd.setAdListener(new AdListener(){
+
+            @Override
+            public void onAdClosed(){
+                Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
+                startActivity(intent);
+                interstitialAd.loadAd(new AdRequest.Builder().build());
+
+            }
+
+
+        });
+
 
 
         r = new Random();
@@ -86,12 +100,24 @@ public class question2Activity extends AppCompatActivity {
 
                     if(iquestionNumber >=11){
 
+                        int scoreSecond;
+                        scoreSecond= iScore;
+
+
                         numberOfQuestion.setText("10/10");
-                        interstitialAd.show();
-                        Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
-                        intent.putExtra("Score",iScore);
-                        startActivity(intent);
-                        finish();
+
+                        if (interstitialAd.isLoaded()){
+
+                            interstitialAd.show();
+                        }else {
+
+                            Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
+                            intent.putExtra("Score",iScore);
+                            startActivity(intent);
+                            finish();
+                        }
+
+
                     }
                 }else if (choice1.getText() == strAnswer6){
                     iScore=iScore+6;
@@ -102,11 +128,21 @@ public class question2Activity extends AppCompatActivity {
                     if(iquestionNumber >=11){
 
                         numberOfQuestion.setText("10/10");
-                        interstitialAd.show();
-                        Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
-                        intent.putExtra("Score",iScore);
-                        startActivity(intent);
-                        finish();
+
+                        if (interstitialAd.isLoaded()){
+
+
+                            interstitialAd.show();
+
+
+                        }else {
+
+                            Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
+                            intent.putExtra("Score",iScore);
+                            startActivity(intent);
+                            finish();
+                        }
+
                     }
                 }else if (choice1.getText() == strAnswer3){
                     iScore=iScore+3;
@@ -117,11 +153,19 @@ public class question2Activity extends AppCompatActivity {
                     if(iquestionNumber >=11){
 
                         numberOfQuestion.setText("10/10");
-                        interstitialAd.show();
-                        Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
-                        intent.putExtra("Score",iScore);
-                        startActivity(intent);
-                        finish();
+
+                        if (interstitialAd.isLoaded()){
+
+
+                            interstitialAd.show();
+
+                        }else {
+
+                            Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
+                            intent.putExtra("Score",iScore);
+                            startActivity(intent);
+                            finish();
+                        }
                     }
                 }
 
@@ -141,11 +185,19 @@ public class question2Activity extends AppCompatActivity {
                     if(iquestionNumber >= 11){
 
                         numberOfQuestion.setText("10/10");
-                        interstitialAd.show();
-                        Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
-                        intent.putExtra("Score",iScore);
-                        startActivity(intent);
-                        finish();
+
+                        if (interstitialAd.isLoaded()){
+
+                            interstitialAd.show();
+                        }else{
+
+
+                            Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
+                            intent.putExtra("Score",iScore);
+                            startActivity(intent);
+                            finish();
+                        }
+
                     }
                 }else if (choice2.getText() == strAnswer6){
                     iScore=iScore+6;
@@ -156,11 +208,19 @@ public class question2Activity extends AppCompatActivity {
                     if(iquestionNumber >=11){
 
                         numberOfQuestion.setText("10/10");
-                        interstitialAd.show();
-                        Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
-                        intent.putExtra("Score",iScore);
-                        startActivity(intent);
-                        finish();
+
+                        if (interstitialAd.isLoaded()){
+                            interstitialAd.show();
+
+
+                        }else{
+                            Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
+                            intent.putExtra("Score",iScore);
+                            startActivity(intent);
+                            finish();
+
+                        }
+
                     }
                 } else if (choice2.getText() == strAnswer3){
                     iScore=iScore+3;
@@ -171,11 +231,20 @@ public class question2Activity extends AppCompatActivity {
                     if(iquestionNumber >=11){
 
                         numberOfQuestion.setText("10/10");
-                        interstitialAd.show();
-                        Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
-                        intent.putExtra("Score",iScore);
-                        startActivity(intent);
-                        finish();
+
+                        if (interstitialAd.isLoaded()){
+
+                            interstitialAd.show();
+
+
+                        }else {
+                            Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
+                            intent.putExtra("Score",iScore);
+                            startActivity(intent);
+                            finish();
+
+                        }
+
                     }
                 }
 
@@ -194,12 +263,22 @@ public class question2Activity extends AppCompatActivity {
                     updateQuesiton(r.nextInt(iQuestionLength));
 
                     if(iquestionNumber >= 11){
+
                         numberOfQuestion.setText("10/10");
-                        interstitialAd.show();
-                        Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
-                        intent.putExtra("Score",iScore);
-                        startActivity(intent);
-                        finish();
+
+                        if (interstitialAd.isLoaded()){
+
+                            interstitialAd.show();
+
+                        }else {
+                            Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
+                            intent.putExtra("Score",iScore);
+                            startActivity(intent);
+                            finish();
+
+                        }
+
+
                     }
                 }else if (choice3.getText() == strAnswer6){
                     iScore=iScore+6;
@@ -210,11 +289,20 @@ public class question2Activity extends AppCompatActivity {
                     if(iquestionNumber >=11){
 
                         numberOfQuestion.setText("10/10");
-                        interstitialAd.show();
-                        Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
-                        intent.putExtra("Score",iScore);
-                        startActivity(intent);
-                        finish();
+
+                        if (interstitialAd.isLoaded()){
+
+                            interstitialAd.show();
+
+
+                        }else {
+                            Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
+                            intent.putExtra("Score",iScore);
+                            startActivity(intent);
+                            finish();
+
+                        }
+
                     }
                 }else if (choice3.getText() == strAnswer3){
                     iScore=iScore+3;
@@ -225,11 +313,20 @@ public class question2Activity extends AppCompatActivity {
                     if(iquestionNumber >=11){
 
                         numberOfQuestion.setText("10/10");
-                        interstitialAd.show();
-                        Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
-                        intent.putExtra("Score",iScore);
-                        startActivity(intent);
-                        finish();
+
+                        if (interstitialAd.isLoaded()){
+
+                            interstitialAd.show();
+
+                        }else{
+                            Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
+                            intent.putExtra("Score",iScore);
+                            startActivity(intent);
+                            finish();
+
+                        }
+
+
                     }
                 }
 
@@ -260,6 +357,9 @@ public class question2Activity extends AppCompatActivity {
         strAnswer3 = mQuestions.strGetCorrectAnswer3points(inumber);
 
      }
+
+
+
 
 
 

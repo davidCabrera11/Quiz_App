@@ -28,12 +28,14 @@ public class ResultsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
 
-        //Admob
-        MobileAds.initialize(this,"ca-app-pub-3940256099942544~3347511713");
-        interstitialAd = new InterstitialAd(this);
-        interstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
-        AdRequest adRequest = new AdRequest.Builder().build();
-        interstitialAd.loadAd(adRequest);
+//        int result = getIntent().getExtras().getInt("Score");
+
+   //     String strResult = Integer.toString(result);
+
+  //      showResult=findViewById(R.id.textShowResults);
+
+  //      showResult.setText(strResult+"%");
+
 
 
         btnResartQuiz = findViewById(R.id.restartQuizButton);
@@ -42,16 +44,11 @@ public class ResultsActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                displayAds(btnResartQuiz);
-
-                if (a==1){
                     Intent intent = new Intent(ResultsActivity.this,MainActivity.class);
                     startActivity(intent);
                     finish();
 
-                }
 
-                a++;
 
             }
         });
@@ -59,21 +56,10 @@ public class ResultsActivity extends AppCompatActivity {
 
 
 
-        int result = getIntent().getExtras().getInt("Score");
-
-        String strResult = Integer.toString(result);
-
-        showResult=findViewById(R.id.textShowResults);
-
-        showResult.setText(strResult+"%");
 
 
 
     }
 
-    public void displayAds(View view) {
 
-        interstitialAd.show();
-
-    }
 }

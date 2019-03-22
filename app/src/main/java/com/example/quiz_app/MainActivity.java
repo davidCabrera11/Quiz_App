@@ -53,10 +53,11 @@ public class MainActivity extends AppCompatActivity {
 
                 }else{
 
-
-                        //Toast.makeText(MainActivity.this,"Names Inserted",Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(MainActivity.this,question2Activity.class);
                         passFriendName = editTextFriendName.getText().toString();
+
+                        Intent qChoice = new Intent(MainActivity.this,questionsChoices.class);
+                        qChoice.putExtra("friendName",passFriendName);
+                        Intent intent = new Intent(MainActivity.this,question2Activity.class);
                         intent.putExtra("friend",passFriendName);
                         startActivity(intent);
                         finish();

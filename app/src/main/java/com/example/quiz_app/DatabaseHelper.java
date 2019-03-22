@@ -12,21 +12,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "BestFriendQuizDB";
 
-    public static final String TABLE_1 = "Question_Table";
-    public static final String COL_1_T1 = "questionId";
-    public static final String COL_2_T1 = " questionLiteral";
-
-    public static final String TABLE_2 = "Choice_Table";
-    public static final String COL_1_T2 = "choiceId";
-    public static final String COL_2_T2 = "points";
-    public static final String COL_3_T2 = "questionId";
-
-    public static final String TABLE_3 = "Name_Table";
-    public static final String COL_1_T3 = "yourName";
-    public static final String COL_2_T3 = "friendName";
-
-
-
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
@@ -36,43 +21,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE IF NOT EXISTS Question(questionId  " +
-                "INTEGER PRIMARY KEY AUTOINCREMENT, question VARCHAR)");
-
-        db.execSQL("CREATE TABLE IF NOT EXISTS Choice(choiceId INTEGER PRIMARY KEY AUTOINCREMENT, choicePoints int, " +
-                "questionId int, FOREIGN KEY(questionId) REFERENCES Question(questionId))");
 
         db.execSQL("CREATE TABLE IF NOT EXISTS Name(nameId INTEGER PRIMARY KEY AUTOINCREMENT," +
                      "yourName VARCHAR, friendName VARCHAR)");
-
-
-
-
-    }
-
-    public void insertQuestions(String strq1, String strq2, String strq3, String strq4, String strq5,String strq6, String strq7, String strq8, String strq9){
-
-
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("question",strq1);
-        //contentValues.put("question",strq2);
-        //contentValues.put("question",strq3);
-        //contentValues.put("question",strq4);
-        //contentValues.put("question",strq5);
-        //contentValues.put("question",strq6);
-        //contentValues.put("question",strq7);
-        //contentValues.put("question",strq8);
-        //contentValues.put("question",strq9);
-        //contentValues.put("question",strq10);
-        this.getWritableDatabase().insert("Question","",contentValues);
-
-
-     }
-
-
-    public void insertChoice(){
-
-
 
     }
 

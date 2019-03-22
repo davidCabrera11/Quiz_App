@@ -130,11 +130,11 @@ public class question2Activity extends AppCompatActivity {
 
          String strFriend = getIntent().getExtras().getString("friend");
 
+
+         //changes the 5 place holder in the questions to the friends name
         for (int index = 0; index<strQuestions.length;index++){
 
             strQuestions[index] = strQuestions[index].replace("5",strFriend);
-
-
         }
 
         question.setText(strQuestions[inumber]);

@@ -29,14 +29,10 @@ public class question2Activity extends AppCompatActivity {
     private questionsChoices mQuestions = new questionsChoices();
 
     private String strAnswer;
-    private int iScore = 0, iquestionNumber = 0;
+    private int iScore = 0, iquestionNumber = 1;
     private int iQuestionLength = strQuestions.length;
 
     Random r;
-
-
-
-
 
 
     @Override
@@ -51,7 +47,7 @@ public class question2Activity extends AppCompatActivity {
         choice2 = findViewById(R.id.textChoice2);
         choice3 = findViewById(R.id.textChoice3);
         numberOfQuestion = findViewById(R.id.textNumberQuestion);
-        numberOfQuestion.setText("Score: "+ iScore);
+        numberOfQuestion.setText(iquestionNumber+"/10");
 
 
         updateQuesiton(r.nextInt(iQuestionLength));
@@ -63,11 +59,12 @@ public class question2Activity extends AppCompatActivity {
                 if (choice1.getText() == strAnswer){
                     iScore++;
                     iquestionNumber++;
-                    numberOfQuestion.setText("Score: "+ iScore);
+                    numberOfQuestion.setText(iquestionNumber+"/10");
                     updateQuesiton(r.nextInt(iQuestionLength));
 
-                    if(iScore >=11){
+                    if(iquestionNumber >=11){
 
+                        numberOfQuestion.setText("10/10");
                         Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
                         intent.putExtra("Score",iScore);
                         startActivity(intent);
@@ -84,11 +81,12 @@ public class question2Activity extends AppCompatActivity {
                 if (choice2.getText() == strAnswer){
                     iScore++;
                     iquestionNumber++;
-                    numberOfQuestion.setText("Score: "+ iScore);
+                    numberOfQuestion.setText(iquestionNumber+"/10");
                     updateQuesiton(r.nextInt(iQuestionLength));
 
-                    if(iScore >= 11){
+                    if(iquestionNumber >= 11){
 
+                        numberOfQuestion.setText("10/10");
                         Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
                         intent.putExtra("Score",iScore);
                         startActivity(intent);
@@ -107,11 +105,11 @@ public class question2Activity extends AppCompatActivity {
                 if (choice3.getText() == strAnswer){
                     iScore++;
                     iquestionNumber++;
-                    numberOfQuestion.setText("Score: "+ iScore);
+                    numberOfQuestion.setText(iquestionNumber+"/10");
                     updateQuesiton(r.nextInt(iQuestionLength));
 
-                    if(iScore >= 11){
-
+                    if(iquestionNumber >= 11){
+                        numberOfQuestion.setText("10/10");
                         Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
                         intent.putExtra("Score",iScore);
                         startActivity(intent);
@@ -130,7 +128,6 @@ public class question2Activity extends AppCompatActivity {
 
          String strFriend = getIntent().getExtras().getString("friend");
 
-
          //changes the 5 place holder in the questions to the friends name
         for (int index = 0; index<strQuestions.length;index++){
 
@@ -146,9 +143,6 @@ public class question2Activity extends AppCompatActivity {
 
      }
 
-     private void changeToName(){
-
-
-     }
+ 
 
 }

@@ -23,7 +23,7 @@ public class ResultsActivity extends AppCompatActivity {
 
         showResult=findViewById(R.id.textShowResults);
 
-        showResult.setText("Congratulations you scored "+strResult+"%");
+        showResult.setText(strResult+"%");
 
 
 

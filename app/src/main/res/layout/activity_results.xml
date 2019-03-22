@@ -7,8 +7,20 @@
     android:background="@color/colorPrimary"
     tools:context=".ResultsActivity">
 
-
-
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/textShowResults"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="150dp"
+        android:text="Congratulations you scored:"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textShowResults"
@@ -16,11 +28,20 @@
         android:layout_height="70dp"
         android:layout_centerInParent="true"
         android:background="@drawable/questiontextstyle"
+        android:gravity="center"
         android:text="RESULTS"
-        android:textSize="18sp"
-        android:textColor="@color/textInputColor"
         android:textAlignment="center"
-        android:gravity="center"/>
+        android:textColor="@color/textInputColor"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_above="@id/textShowResults"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/star" />
 
 </RelativeLayout>

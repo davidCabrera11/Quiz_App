@@ -44,4 +44,17 @@
         android:layout_marginBottom="50dp"
         android:src="@drawable/star" />
 
+    <Button
+        android:id="@+id/restartQuizButton"
+        android:layout_width="200dp"
+        android:layout_height="65dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/textShowResults"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/buttonstyle"
+        android:text="@string/restartquiz"
+        android:onClick="displayAds"
+        android:textSize="20sp"/>
+
+
 </RelativeLayout>

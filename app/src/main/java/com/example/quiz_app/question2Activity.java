@@ -6,6 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
+
 import java.util.Random;
 
 public class question2Activity extends AppCompatActivity {
@@ -32,6 +37,9 @@ public class question2Activity extends AppCompatActivity {
     private int iScore = 0, iquestionNumber = 1;
     private int iQuestionLength = strQuestions.length;
 
+    private AdView adView;
+    private InterstitialAd interstitialAd;
+
     Random r;
 
 
@@ -39,6 +47,20 @@ public class question2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question2);
+
+
+        //Admob
+        MobileAds.initialize(this,"ca-app-pub-3940256099942544~3347511713");
+        adView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
+
+        interstitialAd = new InterstitialAd(this);
+        interstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        AdRequest adRequest1 = new AdRequest.Builder().build();
+        interstitialAd.loadAd(adRequest1);
+
+
 
         r = new Random();
 
@@ -65,6 +87,7 @@ public class question2Activity extends AppCompatActivity {
                     if(iquestionNumber >=11){
 
                         numberOfQuestion.setText("10/10");
+                        interstitialAd.show();
                         Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
                         intent.putExtra("Score",iScore);
                         startActivity(intent);
@@ -79,6 +102,7 @@ public class question2Activity extends AppCompatActivity {
                     if(iquestionNumber >=11){
 
                         numberOfQuestion.setText("10/10");
+                        interstitialAd.show();
                         Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
                         intent.putExtra("Score",iScore);
                         startActivity(intent);
@@ -93,6 +117,7 @@ public class question2Activity extends AppCompatActivity {
                     if(iquestionNumber >=11){
 
                         numberOfQuestion.setText("10/10");
+                        interstitialAd.show();
                         Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
                         intent.putExtra("Score",iScore);
                         startActivity(intent);
@@ -116,6 +141,7 @@ public class question2Activity extends AppCompatActivity {
                     if(iquestionNumber >= 11){
 
                         numberOfQuestion.setText("10/10");
+                        interstitialAd.show();
                         Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
                         intent.putExtra("Score",iScore);
                         startActivity(intent);
@@ -130,6 +156,7 @@ public class question2Activity extends AppCompatActivity {
                     if(iquestionNumber >=11){
 
                         numberOfQuestion.setText("10/10");
+                        interstitialAd.show();
                         Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
                         intent.putExtra("Score",iScore);
                         startActivity(intent);
@@ -144,6 +171,7 @@ public class question2Activity extends AppCompatActivity {
                     if(iquestionNumber >=11){
 
                         numberOfQuestion.setText("10/10");
+                        interstitialAd.show();
                         Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
                         intent.putExtra("Score",iScore);
                         startActivity(intent);
@@ -167,6 +195,7 @@ public class question2Activity extends AppCompatActivity {
 
                     if(iquestionNumber >= 11){
                         numberOfQuestion.setText("10/10");
+                        interstitialAd.show();
                         Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
                         intent.putExtra("Score",iScore);
                         startActivity(intent);
@@ -181,6 +210,7 @@ public class question2Activity extends AppCompatActivity {
                     if(iquestionNumber >=11){
 
                         numberOfQuestion.setText("10/10");
+                        interstitialAd.show();
                         Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
                         intent.putExtra("Score",iScore);
                         startActivity(intent);
@@ -195,6 +225,7 @@ public class question2Activity extends AppCompatActivity {
                     if(iquestionNumber >=11){
 
                         numberOfQuestion.setText("10/10");
+                        interstitialAd.show();
                         Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
                         intent.putExtra("Score",iScore);
                         startActivity(intent);

@@ -12,6 +12,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -20,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextFriendName;
     public String passFriendName;
 
+    private AdView adView;
 
     DatabaseHelper bffDatabase;
 
@@ -33,6 +38,13 @@ public class MainActivity extends AppCompatActivity {
         btnStartQuiz = findViewById(R.id.startQuizButton);
         editTextYourName = findViewById(R.id.yourName);
         editTextFriendName = findViewById(R.id.friendName);
+
+
+        //Admob
+        MobileAds.initialize(this,"ca-app-pub-3940256099942544~3347511713");
+        adView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
 
 
 

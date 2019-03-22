@@ -28,7 +28,7 @@ public class question2Activity extends AppCompatActivity {
 
     private questionsChoices mQuestions = new questionsChoices();
 
-    private String strAnswer;
+    private String strAnswer10, strAnswer6, strAnswer3;
     private int iScore = 0, iquestionNumber = 1;
     private int iQuestionLength = strQuestions.length;
 
@@ -56,8 +56,36 @@ public class question2Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (choice1.getText() == strAnswer){
-                    iScore++;
+                if (choice1.getText() == strAnswer10){
+                    iScore= iScore+10;
+                    iquestionNumber++;
+                    numberOfQuestion.setText(iquestionNumber+"/10");
+                    updateQuesiton(r.nextInt(iQuestionLength));
+
+                    if(iquestionNumber >=11){
+
+                        numberOfQuestion.setText("10/10");
+                        Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
+                        intent.putExtra("Score",iScore);
+                        startActivity(intent);
+                        finish();
+                    }
+                }else if (choice1.getText() == strAnswer6){
+                    iScore=iScore+6;
+                    iquestionNumber++;
+                    numberOfQuestion.setText(iquestionNumber+"/10");
+                    updateQuesiton(r.nextInt(iQuestionLength));
+
+                    if(iquestionNumber >=11){
+
+                        numberOfQuestion.setText("10/10");
+                        Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
+                        intent.putExtra("Score",iScore);
+                        startActivity(intent);
+                        finish();
+                    }
+                }else if (choice1.getText() == strAnswer3){
+                    iScore=iScore+3;
                     iquestionNumber++;
                     numberOfQuestion.setText(iquestionNumber+"/10");
                     updateQuesiton(r.nextInt(iQuestionLength));
@@ -72,19 +100,48 @@ public class question2Activity extends AppCompatActivity {
                     }
                 }
 
+
             }
         });
 
         choice2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (choice2.getText() == strAnswer){
-                    iScore++;
+                if (choice2.getText() == strAnswer10){
+                    iScore= iScore +10;
                     iquestionNumber++;
                     numberOfQuestion.setText(iquestionNumber+"/10");
                     updateQuesiton(r.nextInt(iQuestionLength));
 
                     if(iquestionNumber >= 11){
+
+                        numberOfQuestion.setText("10/10");
+                        Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
+                        intent.putExtra("Score",iScore);
+                        startActivity(intent);
+                        finish();
+                    }
+                }else if (choice2.getText() == strAnswer6){
+                    iScore=iScore+6;
+                    iquestionNumber++;
+                    numberOfQuestion.setText(iquestionNumber+"/10");
+                    updateQuesiton(r.nextInt(iQuestionLength));
+
+                    if(iquestionNumber >=11){
+
+                        numberOfQuestion.setText("10/10");
+                        Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
+                        intent.putExtra("Score",iScore);
+                        startActivity(intent);
+                        finish();
+                    }
+                } else if (choice2.getText() == strAnswer3){
+                    iScore=iScore+3;
+                    iquestionNumber++;
+                    numberOfQuestion.setText(iquestionNumber+"/10");
+                    updateQuesiton(r.nextInt(iQuestionLength));
+
+                    if(iquestionNumber >=11){
 
                         numberOfQuestion.setText("10/10");
                         Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
@@ -102,13 +159,41 @@ public class question2Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (choice3.getText() == strAnswer){
-                    iScore++;
+                if (choice3.getText() == strAnswer10){
+                    iScore= iScore+10;
                     iquestionNumber++;
                     numberOfQuestion.setText(iquestionNumber+"/10");
                     updateQuesiton(r.nextInt(iQuestionLength));
 
                     if(iquestionNumber >= 11){
+                        numberOfQuestion.setText("10/10");
+                        Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
+                        intent.putExtra("Score",iScore);
+                        startActivity(intent);
+                        finish();
+                    }
+                }else if (choice3.getText() == strAnswer6){
+                    iScore=iScore+6;
+                    iquestionNumber++;
+                    numberOfQuestion.setText(iquestionNumber+"/10");
+                    updateQuesiton(r.nextInt(iQuestionLength));
+
+                    if(iquestionNumber >=11){
+
+                        numberOfQuestion.setText("10/10");
+                        Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
+                        intent.putExtra("Score",iScore);
+                        startActivity(intent);
+                        finish();
+                    }
+                }else if (choice3.getText() == strAnswer3){
+                    iScore=iScore+3;
+                    iquestionNumber++;
+                    numberOfQuestion.setText(iquestionNumber+"/10");
+                    updateQuesiton(r.nextInt(iQuestionLength));
+
+                    if(iquestionNumber >=11){
+
                         numberOfQuestion.setText("10/10");
                         Intent intent = new Intent(question2Activity.this,ResultsActivity.class);
                         intent.putExtra("Score",iScore);
@@ -139,10 +224,12 @@ public class question2Activity extends AppCompatActivity {
         choice2.setText(mQuestions.getChoice2(inumber));
         choice3.setText(mQuestions.getChoice3(inumber));
 
-        strAnswer = mQuestions.strGetCorrectAnswer(inumber);
+        strAnswer10 = mQuestions.strGetCorrectAnswer10points(inumber);
+        strAnswer6 = mQuestions.strGetCorrectAnswer6points(inumber);
+        strAnswer3 = mQuestions.strGetCorrectAnswer3points(inumber);
 
      }
 
- 
+
 
 }

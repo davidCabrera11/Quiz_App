@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".Questions_Activity">
+    tools:context=".ResultsActivity">
 
 
 
 
     <TextView
-        android:id="@+id/text1"
+        android:id="@+id/textShowResults"
         android:layout_width="250dp"
         android:layout_height="70dp"
         android:layout_centerInParent="true"

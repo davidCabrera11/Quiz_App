@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".Questions_Activity">
+    tools:context=".question2Activity">
 
     <TextView
         android:id="@+id/textViewQuestion"
@@ -31,8 +31,7 @@
         android:textSize="18sp"
         android:textColor="@color/textInputColor"
         android:textAlignment="center"
-        android:gravity="center"
-        android:onClick="questionTextChange"/>
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/textChoice2"
@@ -44,8 +43,7 @@
         android:textSize="18sp"
         android:textColor="@color/textInputColor"
         android:textAlignment="center"
-        android:gravity="center"
-        android:onClick="questionTextChange"/>
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/textChoice3"
@@ -59,8 +57,7 @@
         android:textSize="18sp"
         android:textColor="@color/textInputColor"
         android:textAlignment="center"
-        android:gravity="center"
-        android:onClick="questionTextChange"/>
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/textNumberQuestion"

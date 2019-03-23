@@ -3,11 +3,9 @@
 ### App Description
 Best Friends Quiz App that allows the user to test how close they are to their best friend.
 
-###App Walk-through
+### App Walk-through
 
-
-
-
+  ![](quizApp.gif)
 
 
 

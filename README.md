@@ -5,7 +5,7 @@ Best Friends Quiz App that allows the user to test how close they are to their b
 
 ### App Walk-through
 
-  ![](quizApp.gif)
+  ![]( )
 
 
 

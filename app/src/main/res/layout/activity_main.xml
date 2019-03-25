@@ -29,6 +29,8 @@
         android:layout_marginBottom="20dp"
         android:background="@drawable/textstyle"
         android:hint="@string/yname"
+        android:maxLines="1"
+        android:inputType="text"
         android:textAlignment="center"
         android:textColor="@color/textInputColor"/>
 
@@ -42,6 +44,8 @@
         android:background="@drawable/textstyle"
         android:hint="@string/fname"
         android:textAlignment="center"
+        android:maxLines="1"
+        android:inputType="text"
         android:textColor="@color/textInputColor"/>
 
     <Button
